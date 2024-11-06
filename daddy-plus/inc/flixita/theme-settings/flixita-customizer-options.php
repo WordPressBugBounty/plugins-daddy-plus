@@ -520,6 +520,24 @@ function daddy_plus_flixita_customize_options($wp_customize)
 			'customizer_repeater_text2_control' => true,
 			'customizer_repeater_link_control' => true,
 		)));
+	}elseif ( 'Avinza' == $activate_theme) {	
+		// Info
+		$wp_customize->add_setting('info_data2', array(
+			'sanitize_callback' => 'flixita_repeater_sanitize',
+			'priority' => 2,
+			'default' => daddy_plus_flixita_get_default_option( 'info_data2' )
+		));
+
+		$wp_customize->add_control(new Flixita_Repeater($wp_customize, 'info_data2', array(
+			'label' => esc_html__('Information', 'daddy-plus') ,
+			'section' => 'info_section_set',
+			'add_field_label' => esc_html__('Add New Information', 'daddy-plus') ,
+			'item_name' => esc_html__('Information', 'daddy-plus') ,
+			'customizer_repeater_icon_control' => true,
+			'customizer_repeater_title_control' => true,
+			'customizer_repeater_text_control' => true,
+			'customizer_repeater_link_control' => true,
+		)));
 	}elseif ( 'Alexia' == $activate_theme || 'Avine' == $activate_theme || 'Flecto' == $activate_theme) {
 		// Info
 		$wp_customize->add_setting('info_data', array(
@@ -619,7 +637,7 @@ function daddy_plus_flixita_customize_options($wp_customize)
 	);	
 	
 	
-	if ( 'Avire' == $activate_theme || 'Flecto' == $activate_theme  || 'Alvert' == $activate_theme) {
+	if ( 'Avire' == $activate_theme || 'Flecto' == $activate_theme  || 'Alvert' == $activate_theme  || 'Avinza' == $activate_theme) {
 		// Marque content Section //
 		$wp_customize->add_setting('marque_content_head', array(
 			'capability' => 'edit_theme_options',
@@ -734,27 +752,48 @@ function daddy_plus_flixita_customize_options($wp_customize)
         'type' => 'textarea',
     ));
 
-    // Service Data
-    $wp_customize->add_setting('service_data', array(
-        'sanitize_callback' => 'flixita_repeater_sanitize',
-        'transport' => $selective_refresh,
-        'priority' => 8,
-        'default' => daddy_plus_flixita_get_default_option( 'service_data' ),
-    ));
+	if ( 'Avinza' == $activate_theme) {
+		// Service Data
+		$wp_customize->add_setting('service_data', array(
+			'sanitize_callback' => 'flixita_repeater_sanitize',
+			'transport' => $selective_refresh,
+			'priority' => 8,
+			'default' => daddy_plus_flixita_get_default_option( 'service_data' ),
+		));
 
-    $wp_customize->add_control(new Flixita_Repeater($wp_customize, 'service_data', array(
-        'label' => esc_html__('Service', 'daddy-plus') ,
-        'section' => 'service_section_set',
-        'add_field_label' => esc_html__('Add New Service', 'daddy-plus') ,
-        'item_name' => esc_html__('Service', 'daddy-plus') ,
-        'customizer_repeater_icon_control' => true,
-        'customizer_repeater_image_control' => true,
-        'customizer_repeater_title_control' => true,
-        'customizer_repeater_text_control' => true,
-        'customizer_repeater_text2_control' => true,
-        'customizer_repeater_link_control' => true,
-    )));
-	
+		$wp_customize->add_control(new Flixita_Repeater($wp_customize, 'service_data', array(
+			'label' => esc_html__('Service', 'daddy-plus') ,
+			'section' => 'service_section_set',
+			'add_field_label' => esc_html__('Add New Service', 'daddy-plus') ,
+			'item_name' => esc_html__('Service', 'daddy-plus') ,
+			'customizer_repeater_icon_control' => true,
+			'customizer_repeater_title_control' => true,
+			'customizer_repeater_text_control' => true,
+			'customizer_repeater_text2_control' => true,
+			'customizer_repeater_link_control' => true,
+		)));
+	}else{
+		// Service Data
+		$wp_customize->add_setting('service_data', array(
+			'sanitize_callback' => 'flixita_repeater_sanitize',
+			'transport' => $selective_refresh,
+			'priority' => 8,
+			'default' => daddy_plus_flixita_get_default_option( 'service_data' ),
+		));
+
+		$wp_customize->add_control(new Flixita_Repeater($wp_customize, 'service_data', array(
+			'label' => esc_html__('Service', 'daddy-plus') ,
+			'section' => 'service_section_set',
+			'add_field_label' => esc_html__('Add New Service', 'daddy-plus') ,
+			'item_name' => esc_html__('Service', 'daddy-plus') ,
+			'customizer_repeater_icon_control' => true,
+			'customizer_repeater_image_control' => true,
+			'customizer_repeater_title_control' => true,
+			'customizer_repeater_text_control' => true,
+			'customizer_repeater_text2_control' => true,
+			'customizer_repeater_link_control' => true,
+		)));
+	}
 	
 	// Upgrade
 	$wp_customize->add_setting('flixita_service_upgrade',array(

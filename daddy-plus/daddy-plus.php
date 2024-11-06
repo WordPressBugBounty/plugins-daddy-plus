@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 * Plugin Name:          Daddy Plus
 * Plugin URI:           
 * Description:          Daddy Plus plugin provides Daddy themes extra settings for front page.
-* Version:              1.0.18
+* Version:              1.0.19
 * Author:               Themes Daddy
 * Author URI:           
 * Tested up to:         6.6
@@ -86,6 +86,9 @@ if ( ! function_exists( 'daddy_plus_init' ) ) {
 		}
 		if ( 'Quickify' == $activate_theme ) {
 			require 'inc/quickify/quickify.php';
+		}
+		if ( 'Avinza' == $activate_theme ) {
+			require 'inc/avinza/avinza.php';
 		}
 
 	}
