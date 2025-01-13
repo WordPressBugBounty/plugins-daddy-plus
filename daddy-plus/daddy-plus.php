@@ -7,10 +7,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 * Plugin Name:          Daddy Plus
 * Plugin URI:           
 * Description:          Daddy Plus plugin provides Daddy themes extra settings for front page.
-* Version:              1.0.19
+* Version:              1.0.20
 * Author:               Themes Daddy
 * Author URI:           
-* Tested up to:         6.6
+* Tested up to:         6.7
 * Requires:             4.6 or higher
 * License:              GPLv3 or later
 * License URI:          http://www.gnu.org/licenses/gpl-3.0.html
@@ -89,6 +89,9 @@ if ( ! function_exists( 'daddy_plus_init' ) ) {
 		}
 		if ( 'Avinza' == $activate_theme ) {
 			require 'inc/avinza/avinza.php';
+		}
+		if ( 'Flectine' == $activate_theme ) {
+			require 'inc/flectine/flectine.php';
 		}
 
 	}
