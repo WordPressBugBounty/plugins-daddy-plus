@@ -18,6 +18,17 @@ if (!function_exists('daddy_plus_flixita_dynamic_style')):
         $output_style .= ".flixita-call-action-section {
 								background-image: url(" . esc_url($call_action_bg_img) . ");
 							}\n";
+							
+		// Features
+        $features_img = get_theme_mod('features_img', daddy_plus_flixita_get_default_option( 'features_img' ));
+        $features_img_attach = get_theme_mod('features_img_attach', daddy_plus_flixita_get_default_option( 'features_img_attach' ));
+        $features_img_opacity = get_theme_mod('features_img_opacity', daddy_plus_flixita_get_default_option( 'features_img_opacity' ));
+        $features_img_overlay_color = get_theme_mod('features_img_overlay_color', daddy_plus_flixita_get_default_option( 'features_img_overlay_color' ));
+        list($br, $bg, $bb) = sscanf($features_img_overlay_color, "#%02x%02x%02x");
+        $output_style .= ".flixita-features-section {
+								 background: url(" . esc_url($features_img) . ") no-repeat " . esc_attr($features_img_attach) . " center center / cover rgb($br $bg $bb / " . esc_attr($features_img_opacity) . ");
+								 background-blend-mode: multiply;
+							}\n";					
 
         wp_add_inline_style('flixita-style', $output_style);
     }
@@ -253,7 +264,7 @@ function daddy_plus_flixita_marquee_default()
 */
 $activate_theme_data = wp_get_theme(); // getting current theme data.
 $activate_theme      = $activate_theme_data->name;
-if ( 'Flixify' == $activate_theme || 'Flecto' == $activate_theme  || 'QuickBiz' == $activate_theme) {
+if ( 'Flixify' == $activate_theme || 'Flecto' == $activate_theme  || 'QuickBiz' == $activate_theme  || 'Britely' == $activate_theme) {
 	function daddy_plus_flixita_service_default()
 	{
 		return apply_filters('daddy_plus_flixita_service_default', json_encode(array(
@@ -328,6 +339,64 @@ if ( 'Flixify' == $activate_theme || 'Flecto' == $activate_theme  || 'QuickBiz' 
 			) ,
 		)));
 	}
+}
+
+/*
+ *
+ * Features Section
+*/
+function daddy_plus_flixita_features_default()
+{
+	return apply_filters('daddy_plus_flixita_features_default', json_encode(array(
+		array(
+			'icon_value' => 'fa-paint-brush',
+			'title' => esc_html__('Theme', 'daddy-plus') ,
+			'subtitle' => esc_html__('Clean Design', 'daddy-plus') ,
+			'text' => esc_html__('Unlimited Styles', 'daddy-plus') ,
+			'link' => '#',
+			'id' => 'customizer_repeater_features_001'
+		) ,
+		array(
+			'icon_value' => 'fa-smile-o',
+			'title' => esc_html__('Theme', 'daddy-plus') ,
+			'subtitle' => esc_html__('Lifestyle', 'daddy-plus') ,
+			'text' => esc_html__('Unlimited Styles', 'daddy-plus') ,
+			'link' => '#',
+			'id' => 'customizer_repeater_features_002'
+		) ,
+		array(
+			'icon_value' => 'fa-users',
+			'title' => esc_html__('Theme', 'daddy-plus') ,
+			'subtitle' => esc_html__('Business', 'daddy-plus') ,
+			'text' => esc_html__('Unlimited Styles', 'daddy-plus') ,
+			'link' => '#',
+			'id' => 'customizer_repeater_features_003'
+		) ,
+		array(
+			'icon_value' => 'fa-tv',
+			'title' => esc_html__('Theme', 'daddy-plus') ,
+			'subtitle' => esc_html__('Marketing', 'daddy-plus') ,
+			'text' => esc_html__('Unlimited Styles', 'daddy-plus') ,
+			'link' => '#',
+			'id' => 'customizer_repeater_features_004'
+		) ,
+		array(
+			'icon_value' => 'fa-list-alt',
+			'title' => esc_html__('Theme', 'daddy-plus') ,
+			'subtitle' => esc_html__('Blog', 'daddy-plus') ,
+			'text' => esc_html__('Unlimited Styles', 'daddy-plus') ,
+			'link' => '#',
+			'id' => 'customizer_repeater_features_005'
+		) ,
+		array(
+			'icon_value' => 'fa-stethoscope',
+			'title' => esc_html__('Theme', 'daddy-plus') ,
+			'subtitle' => esc_html__('Newspaper', 'daddy-plus') ,
+			'text' => esc_html__('Unlimited Styles', 'daddy-plus') ,
+			'link' => '#',
+			'id' => 'customizer_repeater_features_006'
+		) 
+	)));
 }
 /*
  *

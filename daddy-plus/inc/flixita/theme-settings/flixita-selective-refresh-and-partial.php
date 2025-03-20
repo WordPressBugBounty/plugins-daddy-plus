@@ -101,6 +101,32 @@ function daddy_plus_flixita_selective_refresh( $wp_customize ) {
 		'settings'            => 'product_desc',
 		'render_callback'  => 'flixita_product_desc_render_callback',
 	) );
+	
+	// features_ttl
+	$wp_customize->selective_refresh->add_partial( 'features_ttl', array(
+		'selector'            => '.flixita-features-section  .theme-main-heading .title',
+		'settings'            => 'features_ttl',
+		'render_callback'  => 'flixita_features_ttl_render_callback',
+	) );
+	
+	// features_subttl
+	$wp_customize->selective_refresh->add_partial( 'features_subttl', array(
+		'selector'            => '.flixita-features-section  .theme-main-heading h2',
+		'settings'            => 'features_subttl',
+		'render_callback'  => 'flixita_features_subttl_render_callback',
+	) );
+	
+	// features_desc
+	$wp_customize->selective_refresh->add_partial( 'features_desc', array(
+		'selector'            => '.flixita-features-section  .theme-main-heading p',
+		'settings'            => 'features_desc',
+		'render_callback'  => 'flixita_features_desc_render_callback',
+	) );
+	
+	// features_data
+	$wp_customize->selective_refresh->add_partial( 'features_data', array(
+		'selector'            => '.flixita-features-section  .features-wrapper'
+	) );
 }
 add_action( 'customize_register', 'daddy_plus_flixita_selective_refresh' );
 
@@ -169,4 +195,19 @@ function flixita_product_subttl_render_callback() {
 // product_desc
 function flixita_product_desc_render_callback() {
 	return get_theme_mod( 'product_desc' );
+}
+
+// features_ttl
+function flixita_features_ttl_render_callback() {
+	return get_theme_mod( 'features_ttl' );
+}
+
+// features_subttl
+function flixita_features_subttl_render_callback() {
+	return get_theme_mod( 'features_subttl' );
+}
+
+// features_desc
+function flixita_features_desc_render_callback() {
+	return get_theme_mod( 'features_desc' );
 }

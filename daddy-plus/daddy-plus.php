@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 * Plugin Name:          Daddy Plus
 * Plugin URI:           
 * Description:          Daddy Plus plugin provides Daddy themes extra settings for front page.
-* Version:              1.0.20
+* Version:              1.0.21
 * Author:               Themes Daddy
-* Author URI:           
+* Author URI:    		https://themesdaddy.com/       
 * Tested up to:         6.7
 * Requires:             4.6 or higher
 * License:              GPLv3 or later
@@ -92,6 +92,12 @@ if ( ! function_exists( 'daddy_plus_init' ) ) {
 		}
 		if ( 'Flectine' == $activate_theme ) {
 			require 'inc/flectine/flectine.php';
+		}
+		if ( 'Britely' == $activate_theme ) {
+			require 'inc/britely/britely.php';
+		}
+		if ( 'Abiz' == $activate_theme ) {
+			require 'inc/abiz/abiz.php';
 		}
 
 	}

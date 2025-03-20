@@ -812,6 +812,7 @@ function daddy_plus_flixita_customize_options($wp_customize)
 	);	
 	
 	
+	if ( 'Britely' !== $activate_theme) {
 	//  Head //
     $wp_customize->add_setting('call_action_head', array(
         'capability' => 'edit_theme_options',
@@ -1020,7 +1021,7 @@ function daddy_plus_flixita_customize_options($wp_customize)
         'label' => esc_html__('Image', 'daddy-plus') ,
         'section' => 'call_action_section_set',
     )));
-	
+	}
 	// Blog Header Section //
     $wp_customize->add_setting('blog_headings', array(
         'capability' => 'edit_theme_options',
@@ -1115,5 +1116,169 @@ function daddy_plus_flixita_customize_options($wp_customize)
 		'section' => 'blog_section_set',
 		'type' => 'number',
 	));
+	
+	if ( 'Britely' == $activate_theme) {
+	//  Head //
+    $wp_customize->add_setting('features_head', array(
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flixita_sanitize_text',
+        'priority' => 1,
+    ));
+
+    $wp_customize->add_control('features_head', array(
+        'type' => 'hidden',
+        'label' => __('Features Section', 'flixita-pro') ,
+        'section' => 'features_section_set',
+    ));
+
+    //  Title //
+    $wp_customize->add_setting('features_ttl', array(
+        'default' => daddy_plus_flixita_get_default_option( 'features_ttl' ),
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flixita_sanitize_html',
+        'transport' => $selective_refresh,
+        'priority' => 4,
+    ));
+
+    $wp_customize->add_control('features_ttl', array(
+        'label' => __('Title', 'flixita-pro') ,
+        'section' => 'features_section_set',
+        'type' => 'text',
+    ));
+
+    // Subtitle //
+    $wp_customize->add_setting('features_subttl', array(
+        'default' => daddy_plus_flixita_get_default_option( 'features_subttl' ),
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flixita_sanitize_html',
+        'transport' => $selective_refresh,
+        'priority' => 5,
+    ));
+
+    $wp_customize->add_control('features_subttl', array(
+        'label' => __('Subtitle', 'flixita-pro') ,
+        'section' => 'features_section_set',
+        'type' => 'textarea',
+    ));
+
+    // Description //
+    $wp_customize->add_setting('features_desc', array(
+        'default' => daddy_plus_flixita_get_default_option( 'features_desc' ),
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flixita_sanitize_html',
+        'transport' => $selective_refresh,
+        'priority' => 6,
+    ));
+
+    $wp_customize->add_control('features_desc', array(
+        'label' => __('Description', 'flixita-pro') ,
+        'section' => 'features_section_set',
+        'type' => 'textarea',
+    ));
+
+    // Features Data
+    $wp_customize->add_setting('features_data', array(
+        'sanitize_callback' => 'flixita_repeater_sanitize',
+        'transport' => $selective_refresh,
+        'priority' => 8,
+        'default' => daddy_plus_flixita_get_default_option( 'features_data' ),
+    ));
+
+    $wp_customize->add_control(new Flixita_Repeater($wp_customize, 'features_data', array(
+        'label' => esc_html__('Features', 'flixita-pro') ,
+        'section' => 'features_section_set',
+        'add_field_label' => esc_html__('Add New Features', 'flixita-pro') ,
+        'item_name' => esc_html__('Features', 'flixita-pro') ,
+        'customizer_repeater_icon_control' => true,
+        'customizer_repeater_image_control' => true,
+        'customizer_repeater_title_control' => true,
+        'customizer_repeater_subtitle_control' => true,
+        'customizer_repeater_text_control' => true,
+        'customizer_repeater_link_control' => true,
+    )));
+
+	// Upgrade
+	$wp_customize->add_setting('flixita_features_upgrade',array(
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'priority' => 8,
+    ));
+	
+	$wp_customize->add_control(new Daddy_Plus_Customize_Upgrade_Control($wp_customize, 
+			'flixita_features_upgrade', 
+			array(
+				'label'      => __( 'Features', 'daddy-plus' ),
+				'section'    => 'features_section_set',
+			) 
+		) 
+	);	
+
+    //  Image //
+    $wp_customize->add_setting('features_img', array(
+        'default' => daddy_plus_flixita_get_default_option( 'features_img' ),
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flixita_sanitize_url',
+        'priority' => 11,
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'features_img', array(
+        'label' => esc_html__('Background Image', 'flixita-pro') ,
+        'section' => 'features_section_set',
+    )));
+
+    // Background Attachment //
+    $wp_customize->add_setting('features_img_attach', array(
+        'default' => daddy_plus_flixita_get_default_option( 'features_img_attach' ),
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'flixita_sanitize_select',
+        'priority' => 12,
+    ));
+
+    $wp_customize->add_control('features_img_attach', array(
+        'label' => __('Background Attachment', 'flixita-pro') ,
+        'section' => 'features_section_set',
+        'type' => 'select',
+        'choices' => array(
+            'scroll' => __('Scroll', 'flixita-pro') ,
+            'fixed' => __('Fixed', 'flixita-pro')
+        )
+    ));
+
+    // Image Opacity //
+    if (class_exists('Flixita_Customizer_Range_Control'))
+    {
+        $wp_customize->add_setting('features_img_opacity', array(
+            'default' => daddy_plus_flixita_get_default_option( 'features_img_opacity' ),
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'flixita_sanitize_range_value',
+            'priority' => 13,
+        ));
+        $wp_customize->add_control(new Flixita_Customizer_Range_Control($wp_customize, 'features_img_opacity', array(
+            'label' => __('Opacity', 'flixita-pro') ,
+            'section' => 'features_section_set',
+            'media_query' => false,
+            'input_attr' => array(
+                'desktop' => array(
+                    'min' => 0,
+                    'max' => 1,
+                    'step' => 0.1,
+                    'default_value' => 0.6,
+                ) ,
+            ) ,
+        )));
+    }
+
+    $wp_customize->add_setting('features_img_overlay_color', array(
+        'default' => daddy_plus_flixita_get_default_option( 'features_img_overlay_color' ),
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'priority' => 14,
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'features_img_overlay_color', array(
+        'label' => __('Overlay Color', 'flixita-pro') ,
+        'section' => 'features_section_set',
+    )));
+	}
 }
 add_action('customize_register', 'daddy_plus_flixita_customize_options');
