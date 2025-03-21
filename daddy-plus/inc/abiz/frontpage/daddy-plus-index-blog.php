@@ -23,7 +23,7 @@ if($enable_blog=='1'):
 						while($abiz_wp_query->have_posts()):$abiz_wp_query->the_post();
 					?>
 					<div class="col-lg-4 col-md-6 col-12">
-						<?php get_template_part('template-parts/content/content','page');  ?>
+						<?php get_template_part('template-parts/content','page');  ?>
 					</div>
 					<?php endwhile; } wp_reset_postdata(); ?>
 				</div>
