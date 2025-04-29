@@ -75,6 +75,8 @@ class Daddy_Plus_Customize_Upgrade_Control extends WP_Customize_Control {
 			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/britely-pro/';	
 		}elseif ( 'Abiz' == $activate_theme ) {
 			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/abiz-pro/';	
+		}elseif ( 'Altiva' == $activate_theme ) {
+			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/altiva-pro/';	
 		}else{
 			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/flixita-pro/';
 		}	
