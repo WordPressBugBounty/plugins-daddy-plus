@@ -3,7 +3,7 @@ Contributors: themesdaddy
 Tags: frontpage, themepage, featured, widgets, admin, companion, homepage, WordPress frontpage, template
 Requires at least: 4.6
 Tested up to: 6.8
-Stable tag: 1.0.25
+Stable tag: 1.0.26
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -18,6 +18,9 @@ The plugin options are user-friendly and you can use this plugin for Themes Dadd
 
 
 == Changelog ==
+
+= 1.0.26 =
+* Flixona Theme Added
 
 = 1.0.25 =
 * Flixona Theme Added

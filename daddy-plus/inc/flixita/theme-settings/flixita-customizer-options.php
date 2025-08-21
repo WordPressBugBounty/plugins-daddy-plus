@@ -558,7 +558,7 @@ function daddy_plus_flixita_customize_options($wp_customize)
 			'customizer_repeater_text_control' => true,
 			'customizer_repeater_link_control' => true,
 		)));	
-	}elseif ( 'MultiBiz' == $activate_theme || 'Avire' == $activate_theme) {
+	}elseif ( 'MultiBiz' == $activate_theme || 'Avire' == $activate_theme  || 'Flixona' == $activate_theme) {
 		// Info
 		$wp_customize->add_setting('info_data', array(
 			'sanitize_callback' => 'flixita_repeater_sanitize',
