@@ -29,7 +29,7 @@ if($enable_slider=='1'):
 						<div class="container">                                
 							<div class="main-content text-<?php echo esc_attr($align); ?>">
 								<?php if ( ! empty( $title ) ) : ?>
-									<h4 data-animation="fadeInLeft" data-delay="150ms"><span class="stdot dot-left"></span><?php echo esc_html($title); ?></h4>
+									<h4 data-animation="fadeInLeft" data-delay="150ms"><?php echo esc_html($title); ?><i class="fa fa-chevron-circle-right"></i></h4>
 								<?php endif; ?>	
 								
 								<?php if ( ! empty( $subtitle ) ) : ?>

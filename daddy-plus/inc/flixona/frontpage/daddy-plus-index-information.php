@@ -4,7 +4,7 @@ $enable_info	= get_theme_mod('enable_info',daddy_plus_flixita_get_default_option
 $info_data	= get_theme_mod('info_data',daddy_plus_flixita_get_default_option( 'info_data' ));
 if($enable_info=='1'):
 ?>	
-<section id="info-section" class="info-section-2">
+<section id="info-section" class="info-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-12 wow fadeInUp">
@@ -23,11 +23,7 @@ if($enable_info=='1'):
 						<div class="col-lg-3 col-md-6 col-12">
 							<aside class="widget widget-contact">
 								<div class="contact-area">
-									<?php if(!empty($image)): ?>
-										<div class="feature-box-img">
-											<img src="<?php echo esc_url($image); ?>" />
-										</div>
-									<?php endif; ?>	
+										
 									<div class="feature-box-inner">
 										<?php if(!empty($icon)): ?>
 											<div class="feature-box-icon">
@@ -36,7 +32,7 @@ if($enable_info=='1'):
 										<?php endif; ?>	
 										
 										<?php if(!empty($title)): ?>
-											<h4 class="feature-box-title"><?php echo esc_html($title); ?></h4>
+											<h4 class="feature-box-title"><a href="<?php echo esc_url($link); ?>"><?php echo esc_html($title); ?></a></h4>
 										<?php endif; ?>
 										
 										<?php if(!empty($text)): ?>
@@ -44,10 +40,10 @@ if($enable_info=='1'):
 										<?php endif; ?>
 										
 										<?php if(!empty($button)): ?>
-											<a href="<?php echo esc_url($link); ?>" class="more read-more"><i class="fa fa-arrow-right"></i></a>
+												<a href="<?php echo esc_url($link); ?>" class="arrow"><i class="fa fa-arrow-right"></i></a>
 										<?php endif; ?>	
 									</div>
-								</div>
+								</div>	
 							</aside>
 						</div>
 				   <?php } } ?>

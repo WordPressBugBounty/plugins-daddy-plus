@@ -812,7 +812,7 @@ function daddy_plus_flixita_customize_options($wp_customize)
 	);	
 	
 	
-	if ( 'Britely' !== $activate_theme) {
+	if ( 'Britely' !== $activate_theme  &&  'Avinex' !== $activate_theme) {
 	//  Head //
     $wp_customize->add_setting('call_action_head', array(
         'capability' => 'edit_theme_options',
@@ -1117,7 +1117,7 @@ function daddy_plus_flixita_customize_options($wp_customize)
 		'type' => 'number',
 	));
 	
-	if ( 'Britely' == $activate_theme) {
+	if ( 'Britely' == $activate_theme  ||  'Avinex' == $activate_theme) {
 	//  Head //
     $wp_customize->add_setting('features_head', array(
         'capability' => 'edit_theme_options',
