@@ -637,7 +637,7 @@ function daddy_plus_flixita_customize_options($wp_customize)
 	);	
 	
 	
-	if ( 'Avire' == $activate_theme || 'Flecto' == $activate_theme  || 'Alvert' == $activate_theme  || 'Avinza' == $activate_theme || 'Flectine' == $activate_theme) {
+	if ( 'Avire' == $activate_theme || 'Flecto' == $activate_theme  || 'Alvert' == $activate_theme  || 'Avinza' == $activate_theme || 'Flectine' == $activate_theme  || 'Flixona' == $activate_theme) {
 		// Marque content Section //
 		$wp_customize->add_setting('marque_content_head', array(
 			'capability' => 'edit_theme_options',

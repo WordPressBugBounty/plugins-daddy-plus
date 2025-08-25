@@ -396,10 +396,8 @@ function daddy_plus_abiz_customize_options($wp_customize)
         'add_field_label' => esc_html__('Add New Features', 'daddy-plus') ,
         'item_name' => esc_html__('Features', 'daddy-plus') ,
         'customizer_repeater_icon_control' => true,
-        'customizer_repeater_image_control' => true,
         'customizer_repeater_title_control' => true,
         'customizer_repeater_subtitle_control' => true,
-        'customizer_repeater_text_control' => true,
         'customizer_repeater_link_control' => true,
     )));
 	

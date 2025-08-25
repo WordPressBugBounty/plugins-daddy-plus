@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 * Plugin Name:          Daddy Plus
 * Plugin URI:           
 * Description:          Daddy Plus plugin provides Daddy themes extra settings for front page.
-* Version:              1.0.26
+* Version:              1.0.27
 * Author:               Themes Daddy
 * Author URI:    		https://themesdaddy.com/       
 * Tested up to:         6.8

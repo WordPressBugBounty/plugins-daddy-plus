@@ -18,10 +18,8 @@ if($enable_features2=='1'):
 						foreach ( $features2_data as $i=>$item ) {
 							$title = ! empty( $item->title ) ? apply_filters( 'abiz_translate_single_string', $item->title, 'Features section' ) : '';
 							$subtitle = ! empty( $item->subtitle ) ? apply_filters( 'abiz_translate_single_string', $item->subtitle, 'Features section' ) : '';
-							$text = ! empty( $item->text ) ? apply_filters( 'abiz_translate_single_string', $item->text, 'Features section' ) : '';
 							$link = ! empty( $item->link ) ? apply_filters( 'abiz_translate_single_string', $item->link, 'Features section' ) : '';
 							$icon = ! empty( $item->icon_value ) ? apply_filters( 'abiz_translate_single_string', $item->icon_value, 'Features section' ) : '';
-							$image = ! empty( $item->image_url ) ? apply_filters( 'abiz_translate_single_string', $item->image_url, 'Features section' ) : '';
 					?>
 						<div class="col-lg-3 col-md-3 col-sm-6 col-12">
 							<div class="feature-single-item">
@@ -35,9 +33,7 @@ if($enable_features2=='1'):
 										<path d="M0 0 C5.21933215 4.36562185 10.09937637 8.95238532 14.90234375 13.76953125 C15.6249086 14.49113937 16.34747345 15.2127475 17.0919342 15.95622253 C18.60491691 17.46852918 20.11665536 18.98208158 21.62719727 20.49682617 C23.95149733 22.82652987 26.281148 25.15078851 28.61132812 27.47460938 C30.0836545 28.94759571 31.5556711 30.42089177 33.02734375 31.89453125 C33.72721909 32.59238235 34.42709442 33.29023346 35.1481781 34.00923157 C35.78626907 34.6504747 36.42436005 35.29171783 37.08178711 35.95239258 C37.92947914 36.801278 37.92947914 36.801278 38.79429626 37.66731262 C40 39 40 39 40 40 C34.94634708 40.09897181 29.89325976 40.17151603 24.83886719 40.21972656 C23.12001721 40.23982628 21.40123548 40.26711089 19.68261719 40.30175781 C17.21011511 40.35035034 14.7385179 40.37298435 12.265625 40.390625 C11.11540863 40.42159271 11.11540863 40.42159271 9.94195557 40.45318604 C6.6183069 40.45457983 4.37542172 40.22713602 1.5078125 38.4921875 C-0.62581052 34.96562924 -0.4981693 31.72883262 -0.390625 27.734375 C-0.38496521 26.94097717 -0.37930542 26.14757935 -0.37347412 25.33013916 C-0.35113147 22.80280527 -0.30094176 20.27690335 -0.25 17.75 C-0.22993214 16.03387468 -0.21168187 14.31772708 -0.1953125 12.6015625 C-0.15127395 8.4004922 -0.08226326 4.20048865 0 0 Z " fill="var(--bs-primary)" transform="translate(0,0)"/>
 									</svg>
 								</div>
-								<?php if(!empty($image)): ?>
-									<div class="feature-icon-box"><img src="<?php echo esc_url($image); ?>"></div>
-								<?php else: ?>	
+								<?php if(!empty($icon)): ?>
 									<div class="feature-icon-box"><i class="fa <?php echo esc_attr($icon); ?>"></i></div>
 								<?php endif; ?>	
 								<?php if(!empty($title)): ?>
