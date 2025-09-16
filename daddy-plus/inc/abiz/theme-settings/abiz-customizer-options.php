@@ -123,25 +123,48 @@ function daddy_plus_abiz_customize_options($wp_customize)
     )));
 	
     // Info
-    $wp_customize->add_setting('info_data', array(
-        'sanitize_callback' => 'abiz_repeater_sanitize',
-        'transport' => $selective_refresh,
-        'priority' => 2,
-        'default' => daddy_plus_abiz_get_default_option( 'info_data' )
-    ));
+	$activate_theme_data = wp_get_theme(); // getting current theme data.
+	$activate_theme      = $activate_theme_data->name;
+	if ( 'Arvina' == $activate_theme ) {
+		$wp_customize->add_setting('info_data', array(
+			'sanitize_callback' => 'abiz_repeater_sanitize',
+			'transport' => $selective_refresh,
+			'priority' => 2,
+			'default' => daddy_plus_abiz_get_default_option( 'info_data' )
+		));
 
-    $wp_customize->add_control(new Abiz_Repeater($wp_customize, 'info_data', array(
-        'label' => esc_html__('Information', 'daddy-plus') ,
-        'section' => 'info_section_set',
-        'add_field_label' => esc_html__('Add New Information', 'daddy-plus') ,
-        'item_name' => esc_html__('Information', 'daddy-plus') ,
-        'customizer_repeater_icon_control' => true,
-        'customizer_repeater_image_control' => true,
-        'customizer_repeater_title_control' => true,
-        'customizer_repeater_text_control' => true,
-        'customizer_repeater_text2_control' => true,
-        'customizer_repeater_link_control' => true
-    )));
+		$wp_customize->add_control(new Abiz_Repeater($wp_customize, 'info_data', array(
+			'label' => esc_html__('Information', 'daddy-plus') ,
+			'section' => 'info_section_set',
+			'add_field_label' => esc_html__('Add New Information', 'daddy-plus') ,
+			'item_name' => esc_html__('Information', 'daddy-plus') ,
+			'customizer_repeater_icon_control' => true,
+			'customizer_repeater_title_control' => true,
+			'customizer_repeater_text_control' => true,
+			'customizer_repeater_text2_control' => true,
+			'customizer_repeater_link_control' => true
+		)));
+	}else{
+		$wp_customize->add_setting('info_data', array(
+			'sanitize_callback' => 'abiz_repeater_sanitize',
+			'transport' => $selective_refresh,
+			'priority' => 2,
+			'default' => daddy_plus_abiz_get_default_option( 'info_data' )
+		));
+
+		$wp_customize->add_control(new Abiz_Repeater($wp_customize, 'info_data', array(
+			'label' => esc_html__('Information', 'daddy-plus') ,
+			'section' => 'info_section_set',
+			'add_field_label' => esc_html__('Add New Information', 'daddy-plus') ,
+			'item_name' => esc_html__('Information', 'daddy-plus') ,
+			'customizer_repeater_icon_control' => true,
+			'customizer_repeater_image_control' => true,
+			'customizer_repeater_title_control' => true,
+			'customizer_repeater_text_control' => true,
+			'customizer_repeater_text2_control' => true,
+			'customizer_repeater_link_control' => true
+		)));
+	}
 	
 	// Upgrade
 	$wp_customize->add_setting('abiz_info_upgrade',array(
