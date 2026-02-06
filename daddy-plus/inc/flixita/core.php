@@ -264,7 +264,7 @@ function daddy_plus_flixita_marquee_default()
 */
 $activate_theme_data = wp_get_theme(); // getting current theme data.
 $activate_theme      = $activate_theme_data->name;
-if ( 'Flixify' == $activate_theme || 'Flecto' == $activate_theme  || 'QuickBiz' == $activate_theme  || 'Britely' == $activate_theme  || 'Flixona' == $activate_theme) {
+if ( 'Flixify' == $activate_theme || 'Flecto' == $activate_theme  || 'QuickBiz' == $activate_theme  || 'Britely' == $activate_theme  || 'Flixona' == $activate_theme  || 'Zestify' == $activate_theme) {
 	function daddy_plus_flixita_service_default()
 	{
 		return apply_filters('daddy_plus_flixita_service_default', json_encode(array(
