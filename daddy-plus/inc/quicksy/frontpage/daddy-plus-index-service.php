@@ -6,7 +6,7 @@ $service_desc		= get_theme_mod('service_desc',daddy_plus_abiz_get_default_option
 $service_data		= get_theme_mod('service_data',daddy_plus_abiz_get_default_option( 'service_data' ));
 if($enable_service=='1'):
 ?>	
-<section id="service-section" class="service-section abiz-service-main st-py-default">
+<section id="service-section" class="service-section-3 abiz-service-main st-py-default">
 	<div class="container">
 		<?php abiz_section_header($service_ttl,$service_subttl,$service_desc); ?>
 		<div class="row">
@@ -24,7 +24,7 @@ if($enable_service=='1'):
 							$image = ! empty( $item->image_url ) ? apply_filters( 'abiz_translate_single_string', $item->image_url, 'Service section' ) : '';
 					?>
 					<div class="col-lg-3 col-md-6 col-12">
-						<div class="service-inner-box-2">
+						<div class="service-inner-box-3">
 							<div class="service-image-box">
 								<?php if(!empty($image)): ?>
 										<div class="service-img">
@@ -33,23 +33,21 @@ if($enable_service=='1'):
 								<?php endif; ?>
 							</div>
 							<div class="servive-wrap">
-								<div class="feature-bg-shape" style="background-image: url(<?php echo esc_url(daddy_plus_plugin_url . '/inc/altiva/images/info-shape.png'); ?>);"></div>
-								<div class="content-box">
-									<?php if(!empty($icon)): ?>
-											<div class="service-icon">
-												<i class="<?php echo esc_attr($icon); ?>"></i>
-											</div>
-									<?php endif; ?>
-									<?php if(!empty($title)): ?>
-										<h4 class="service-title"><a href="<?php echo esc_url($link); ?>"><?php echo esc_html($title); ?></a></h4>
-									<?php endif; ?>
-									<?php if(!empty($text)): ?>
-												<div class="service-excerpt"><?php echo esc_html($text); ?></div>
-									<?php endif; ?>
-									<?php if(!empty($button)): ?>
-										<a class="read-link" href="<?php echo esc_url($link); ?>"><?php echo esc_html($button); ?><i class="fas fa-arrow-right"></i></a>
-									<?php endif; ?>	
-								</div>
+								<span class="count">0<?php echo esc_html($i+1); ?></span>
+								<?php if(!empty($icon)): ?>
+										<div class="service-icon">
+											<i class="<?php echo esc_attr($icon); ?>"></i>
+										</div>
+								<?php endif; ?>
+								<?php if(!empty($title)): ?>
+									<h4 class="service-title"><a href="<?php echo esc_url($link); ?>"><?php echo esc_html($title); ?></a></h4>
+								<?php endif; ?>
+								<?php if(!empty($text)): ?>
+											<div class="service-excerpt"><?php echo esc_html($text); ?></div>
+								<?php endif; ?>
+								<?php if(!empty($button)): ?>
+									<a class="read-link" href="<?php echo esc_url($link); ?>"><?php echo esc_html($button); ?><i class="fas fa-arrow-right"></i></a>
+								<?php endif; ?>	
 							</div>
 						</div>				
 					</div>						

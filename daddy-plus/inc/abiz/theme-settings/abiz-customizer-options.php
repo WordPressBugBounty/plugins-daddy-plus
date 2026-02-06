@@ -125,7 +125,7 @@ function daddy_plus_abiz_customize_options($wp_customize)
     // Info
 	$activate_theme_data = wp_get_theme(); // getting current theme data.
 	$activate_theme      = $activate_theme_data->name;
-	if ( 'Arvina' == $activate_theme ) {
+	if ( 'Arvina' == $activate_theme  ||  'Quicksy' == $activate_theme) {
 		$wp_customize->add_setting('info_data', array(
 			'sanitize_callback' => 'abiz_repeater_sanitize',
 			'transport' => $selective_refresh,

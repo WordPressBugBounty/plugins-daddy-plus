@@ -2,7 +2,7 @@
 $enable_slider 	= get_theme_mod('enable_slider',daddy_plus_abiz_get_default_option( 'enable_slider' ));
 $slider 		= get_theme_mod('slider',daddy_plus_abiz_get_default_option( 'slider' ));if($enable_slider=='1'):	
 ?>	
-<section id="slider-section" class="slider-section owl-nav-2 owl-dot-2 image-move">
+<section id="slider-section" class="slider-section owl-nav-1 owl-dot-2 image-move">
 	<div class="home-slider owl-carousel owl-theme">
 		<?php
 			if ( ! empty( $slider ) ) {
@@ -27,7 +27,7 @@ $slider 		= get_theme_mod('slider',daddy_plus_abiz_get_default_option( 'slider' 
 						<div class="container">                                
 							<div class="main-content text-<?php echo esc_attr($align); ?>">
 								<?php if ( ! empty( $title ) ) : ?>
-									<h4 data-animation="fadeInLeft" data-delay="150ms"><?php echo esc_html($title); ?></h4>
+									<h4 data-animation="fadeInLeft" data-delay="150ms"><span class="stdot dot-left"></span><?php echo esc_html($title); ?></h4>
 								<?php endif; ?>	
 								
 								<?php if ( ! empty( $subtitle ) ) : ?>

@@ -82,7 +82,9 @@ class Daddy_Plus_Customize_Upgrade_Control extends WP_Customize_Control {
 		}elseif ( 'Flixona' == $activate_theme ) {
 			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/flixona-pro/';	
 		}elseif ( 'Arvina' == $activate_theme ) {
-			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/arvina-pro/';	
+			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/arvina-pro/';
+		}elseif ( 'Quicksy' == $activate_theme ) {
+			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/quicksy-pro/';	
 		}else{
 			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/flixita-pro/';
 		}	
