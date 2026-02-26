@@ -3,7 +3,7 @@ Contributors: themesdaddy
 Tags: frontpage, themepage, featured, widgets, admin, companion, homepage, WordPress frontpage, template
 Requires at least: 4.6
 Tested up to: 6.9
-Stable tag: 1.0.30
+Stable tag: 1.0.31
 Requires PHP: 5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -18,6 +18,9 @@ The plugin options are user-friendly and you can use this plugin for Themes Dadd
 
 
 == Changelog ==
+
+= 1.0.31 =
+* BizVita Theme Added
 
 = 1.0.30 =
 * Zestify Theme Added

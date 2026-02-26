@@ -30,6 +30,8 @@ endif;
 add_action('wp_enqueue_scripts', 'daddy_plus_abiz_dynamic_style');
 
 
+$activate_theme_data = wp_get_theme(); // getting current theme data.
+$activate_theme      = $activate_theme_data->name;
 /*
  *
  * Slider Default
@@ -77,6 +79,8 @@ function daddy_plus_abiz_get_slider_default()
  *
  * Info Section
 */
+
+if ( 'BizVita' == $activate_theme ) {
 function daddy_plus_abiz_info_default()
 {
 	return apply_filters('daddy_plus_abiz_info_default', json_encode(array(
@@ -106,19 +110,52 @@ function daddy_plus_abiz_info_default()
 			'text2' => esc_html__('Read More', 'daddy-plus') ,
 			'link' => '#',
 			'id' => 'customizer_repeater_info_003'
-		),
-		array(
-			'image_url' => esc_url(daddy_plus_plugin_url . '/inc/abiz/images/service/service04.jpg'),
-			'icon_value' => 'fas fa-mobile-phone',
-			'title' => esc_html__('Mobility', 'daddy-plus') ,
-			'text' => esc_html__('There are many variations words passages.', 'daddy-plus') ,
-			'text2' => esc_html__('Read More', 'daddy-plus') ,
-			'link' => '#',
-			'id' => 'customizer_repeater_info_004'
 		)
 	)));
 }
-
+}else{
+	function daddy_plus_abiz_info_default()
+	{
+		return apply_filters('daddy_plus_abiz_info_default', json_encode(array(
+			array(
+				'image_url' => esc_url(daddy_plus_plugin_url . '/inc/abiz/images/service/service01.jpg'),
+				'icon_value' => 'fas fa-user',
+				'title' => esc_html__('Expert Work', 'daddy-plus') ,
+				'text' => esc_html__('There are many variations words passages.', 'daddy-plus') ,
+				'text2' => esc_html__('Read More', 'daddy-plus') ,
+				'link' => '#',
+				'id' => 'customizer_repeater_info_001'
+			),
+			array(
+				'image_url' => esc_url(daddy_plus_plugin_url . '/inc/abiz/images/service/service02.jpg'),
+				'icon_value' => 'fas fa-signal',
+				'title' => esc_html__('Networking', 'daddy-plus') ,
+				'text' => esc_html__('There are many variations words passages.', 'daddy-plus') ,
+				'text2' => esc_html__('Read More', 'daddy-plus') ,
+				'link' => '#',
+				'id' => 'customizer_repeater_info_002'
+			),
+			array(
+				'image_url' => esc_url(daddy_plus_plugin_url . '/inc/abiz/images/service/service03.jpg'),
+				'icon_value' => 'fas fa-pencil-square',
+				'title' => esc_html__('Creative Design', 'daddy-plus') ,
+				'text' => esc_html__('There are many variations words passages.', 'daddy-plus') ,
+				'text2' => esc_html__('Read More', 'daddy-plus') ,
+				'link' => '#',
+				'id' => 'customizer_repeater_info_003'
+			),
+			array(
+				'image_url' => esc_url(daddy_plus_plugin_url . '/inc/abiz/images/service/service04.jpg'),
+				'icon_value' => 'fas fa-mobile-phone',
+				'title' => esc_html__('Mobility', 'daddy-plus') ,
+				'text' => esc_html__('There are many variations words passages.', 'daddy-plus') ,
+				'text2' => esc_html__('Read More', 'daddy-plus') ,
+				'link' => '#',
+				'id' => 'customizer_repeater_info_004'
+			)
+		)));
+	}
+}
 /*
  *
  * Service Section
