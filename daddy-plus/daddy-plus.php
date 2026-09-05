@@ -7,10 +7,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 * Plugin Name:          Daddy Plus
 * Plugin URI:           
 * Description:          Daddy Plus plugin provides Daddy themes extra settings for front page.
-* Version:              1.0.31
+* Version:              1.0.32
 * Author:               Themes Daddy
 * Author URI:    		https://themesdaddy.com/       
-* Tested up to:         6.9
+* Tested up to:         7.1
 * Requires:             4.6 or higher
 * License:              GPLv3 or later
 * License URI:          http://www.gnu.org/licenses/gpl-3.0.html
@@ -119,6 +119,9 @@ if ( ! function_exists( 'daddy_plus_init' ) ) {
 		}
 		if ( 'BizVita' == $activate_theme ) {
 			require 'inc/bizvita/bizvita.php';
+		}
+		if ( 'TechBoost' == $activate_theme ) {
+			require 'inc/techboost/techboost.php';
 		}
 	}
 	add_action( 'init', 'daddy_plus_init' );
