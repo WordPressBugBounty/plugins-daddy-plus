@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 * Plugin Name:          Daddy Plus
 * Plugin URI:           
 * Description:          Daddy Plus plugin provides Daddy themes extra settings for front page.
-* Version:              1.0.32
+* Version:              1.0.33
 * Author:               Themes Daddy
 * Author URI:    		https://themesdaddy.com/       
 * Tested up to:         7.1
@@ -122,6 +122,9 @@ if ( ! function_exists( 'daddy_plus_init' ) ) {
 		}
 		if ( 'TechBoost' == $activate_theme ) {
 			require 'inc/techboost/techboost.php';
+		}
+		if ( 'Arvity' == $activate_theme ) {
+			require 'inc/arvity/arvity.php';
 		}
 	}
 	add_action( 'init', 'daddy_plus_init' );
