@@ -92,7 +92,9 @@ class Daddy_Plus_Customize_Upgrade_Control extends WP_Customize_Control {
 		}elseif ( 'TechBoost' == $activate_theme ) {
 			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/techboost-pro/';	
 		}elseif ( 'Arvity' == $activate_theme ) {
-			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/arvity-pro/';	
+			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/arvity-pro/';
+		}elseif ( 'FlixiMart' == $activate_theme ) {
+			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/fliximart-pro/';	
 		}else{
 			$upgrade_to_pro_link = 'https://themesdaddy.com/themes/flixita-pro/';
 		}	

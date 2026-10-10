@@ -9,7 +9,7 @@ if (!function_exists('daddy_plus_flixita_dynamic_style')):
         $slider_opacity = get_theme_mod('slider_opacity', daddy_plus_flixita_get_default_option( 'slider_opacity' ));
         $slider_overlay_clr = get_theme_mod('slider_overlay_clr', daddy_plus_flixita_get_default_option( 'slider_overlay_clr' ));
         list($br, $bg, $bb) = sscanf($slider_overlay_clr, "#%02x%02x%02x");
-        $output_style .= ".main-slider {
+        $output_style .= ".main-slider, .fliximart-theme .banner-slider-info:after {
 					    background: rgba($br, $bg, $bb, " . esc_attr($slider_opacity) . ");
 				}\n";
        

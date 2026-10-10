@@ -538,7 +538,7 @@ function daddy_plus_flixita_customize_options($wp_customize)
 			'customizer_repeater_text_control' => true,
 			'customizer_repeater_link_control' => true,
 		)));
-	}elseif ( 'Alexia' == $activate_theme || 'Avine' == $activate_theme || 'Flecto' == $activate_theme) {
+	}elseif ( 'Alexia' == $activate_theme || 'Avine' == $activate_theme || 'Flecto' == $activate_theme  || 'FlixiMart' == $activate_theme) {
 		// Info
 		$wp_customize->add_setting('info_data', array(
 			'sanitize_callback' => 'flixita_repeater_sanitize',
@@ -637,7 +637,7 @@ function daddy_plus_flixita_customize_options($wp_customize)
 	);	
 	
 	
-	if ( 'Avire' == $activate_theme || 'Flecto' == $activate_theme  || 'Alvert' == $activate_theme  || 'Avinza' == $activate_theme || 'Flectine' == $activate_theme  || 'Flixona' == $activate_theme  || 'Zestify' == $activate_theme  || 'Arvity' == $activate_theme) {
+	if ( 'Avire' == $activate_theme || 'Flecto' == $activate_theme  || 'Alvert' == $activate_theme  || 'Avinza' == $activate_theme || 'Flectine' == $activate_theme  || 'Flixona' == $activate_theme  || 'Zestify' == $activate_theme  || 'Arvity' == $activate_theme  || 'FlixiMart' == $activate_theme) {
 		// Marque content Section //
 		$wp_customize->add_setting('marque_content_head', array(
 			'capability' => 'edit_theme_options',
